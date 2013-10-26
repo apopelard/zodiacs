@@ -1,4 +1,11 @@
 class ZodiacsController < ApplicationController
+
+  def show
+    @sign = params[:sign]
+    @zodiac = Zodiac.find_by({ :sign => params[:sign] })
+  end
+
+=begin
   def ram
     @prognostication = "As your professional dreams unfold, Aries, you may worry about the downside. First, there are new responsibilities that you might doubt your ability to fulfill. Second, you might be catapulted into an uncomfortable new realm of office politics. Don't let these matters put a damper on your enthusiasm. You have what it takes to fulfill the first concern and the wisdom to avoid the second. Onward and upward."
   end
@@ -46,4 +53,5 @@ class ZodiacsController < ApplicationController
   def fishes
     @prognostication = "Business and financial success makes you happy and satisfied, Pisces. You also look forward to moving on. The downside of this flush period is that people who aren't particularly trustworthy might decide to latch onto your coattails for their own purposes. Some might even ask for loans. Be careful about the ones you assist. They might not be honest with you. Don't fall for any sob stories."
   end
+=end
 end
